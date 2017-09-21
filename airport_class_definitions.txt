@@ -1,0 +1,22 @@
+CLASS DEFINITIONS
+An airport is defined as a structure that provides people with the ability to board planes with the purpose of traveling to another airport at a distant location. Airports schedule many flights which are communicated between all airports.
+
+An airline is a company that provides flights for customers through the airport. Airlines have individual charges and may offer different flights than other airlines. Some airlines may only fly locally/domestically while some may fly internationally.
+
+A service is an association class that connects many airports to many airlines. It allows an airport to serve multiple airlines, and an airline to be serviced by multiple airports. Each airline has a specific set of gates at each airport it is serviced at. 
+
+A plane is a vehicle that moves through the air at high speeds. It may carry cargo or customers, depending on the purpose of the plane. Planes provided by airlines typically carry both.
+
+A flight is a scheduled trip that a plane and crew take part in along with customers. It provides details for the trip and will always have a start and end location. 
+
+An extra charge holds three distinct values that tell whether or not a specific luxury has an extra cost. Each attribute is defined separately as to whether or not there will be a charge for that service. For example, pillows may be free but excessive luggage may have a charge.
+
+An incident report is a detailed report that describes any incident that occurs onboard a plane during a flight. It may involve passengers, members of the crew, and will always have a crew member that reports the incident. Along with the people involved, the following are also reported: date, type of incident, brief description.
+
+Employee is a superclass that broadly describes all workers associated with an airline or an airport. At any given time, an employee may be one of the two subclasses, but not both. Employees are not limited to being a ground employee or a flight employee. 
+
+GroundEmployee is a subclass of Employee which represents a worker who that stays at a specific airport. They do not board any flights and do not change airports. 
+
+FlightEmployees is a subclass of Employee which represents a worker who attends to passengers on flights. FlightEmployees are not limited to the number of flights that they embark on but cannot be on two flights that have overlapping flight times or origin/destination airports. FlightEmployees should be aboard flights that fly out of their current city before departing from another arbitrary airport.
+ 
+A CrewMember is an association class that relates many flights to many flightEmployees. 

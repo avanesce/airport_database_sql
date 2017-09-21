@@ -1,0 +1,47 @@
+ATTRIBUTE DEFINITIONS
+AIRPORT
+	NAME			Name for each airport
+	ZIP				ZIP code where the airport is located
+	STATE			State where the airport is located
+	CITY			City where the airport is located 
+	ABBREV			FAA approved abbreviation for the airport;
+					external key
+
+AIRLINE
+	NAME			Name for the airline
+	HQLOC			Location of the airline’s headquarters
+	RANGE			Where the airline flies 
+					Is either [Local/Domestic/International]
+
+SERVICE
+	AIRPORT GATE	The range of gates provided for an airline
+					It is automatically assumed that an airline receives all of the gates within the range to keep the airport organized
+
+PLANE
+	MANUFACTURER	Company that built the plane 
+	MODELNUM		Plane’s model number; shared by planes of same design; 
+					external key provided by manufacturer
+	PASSCOUNT		Number of passengers the plane can hold
+	TAILNUM			Tail number of each plane; a distinct value;
+	PLANENAME		Nickname for the plane; default NULL
+
+FLIGHT
+	DEPART			Trip’s departure airport name
+	ARRIVAL			Trip’s destination airport name
+	FLIGHTNUM		Flight’s specific number; surrogate key
+
+EXTRACHARGE
+	WATERPRICE		Extra cost for water
+	PILLOWPRICE		Extra cost for pillows
+	BAGSPRICE		Extra cost for bags
+					A cost of 0 for any values implies that it is free
+
+INCIDENTREPORT
+	DATEOFINCIDENT	Date of the specified incident
+	TYPEOFINCIDENT	General classification, is not limited
+	DESCRIPTION		Short description of the incident
+	
+CREWMEMBER
+	POSITION		Member’s current role on the flight
+	DATEOFFLIGHT	Date of the specific flight the member is on; 
+					acts as a discriminator attribute as the relationship between FLIGHT and FLIGHTEMP may occur multiple times
